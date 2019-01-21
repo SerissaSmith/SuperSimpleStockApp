@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSimpleStockAppTests", "SuperSimpleStockAppTests\SuperSimpleStockAppTests.csproj", "{3D1B4C70-59AD-4CCE-B6A8-0D931780A97D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleStockApp", "SimpleStockApp\SimpleStockApp.csproj", "{829D18B1-463B-466A-8471-691DAE82BF80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D1B4C70-59AD-4CCE-B6A8-0D931780A97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D1B4C70-59AD-4CCE-B6A8-0D931780A97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D1B4C70-59AD-4CCE-B6A8-0D931780A97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D1B4C70-59AD-4CCE-B6A8-0D931780A97D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829D18B1-463B-466A-8471-691DAE82BF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{829D18B1-463B-466A-8471-691DAE82BF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829D18B1-463B-466A-8471-691DAE82BF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{829D18B1-463B-466A-8471-691DAE82BF80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A9CB4A1-6779-4118-A177-064E0DC584B2}
+	EndGlobalSection
+EndGlobal
