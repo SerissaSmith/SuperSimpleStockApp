@@ -13,7 +13,7 @@ namespace SimpleStockApp
 
             Console.WriteLine("Welcome to the Super Simple Stock App");
 
-            Console.WriteLine("Enter X at any time to Exit.");
+            Console.WriteLine("Enter X to Exit.");
             do
             {
                 Console.WriteLine("L to list stocks and their data");
