@@ -83,10 +83,98 @@ namespace SimpleStockApp
             }
         }
 
-        public void AddTrade (string stockSymbol, int quantity, BuyOrSell buyorSell, decimal tradePrice)
+        public void AddTradePurchase()
         {
-            Record.Add(new StockTradeRecord(stockSymbol, quantity, buyorSell, tradePrice));
-            Console.WriteLine("Not yet implimented");
+            string stockSymbol = null;
+            int quantity = 0;
+            BuyOrSell buyorSell = BuyOrSell.Buy;
+            decimal tradePrice = 0.00m;
+
+            Console.WriteLine("Which stock symbol would you like to purchase?");
+            stockSymbol = Console.ReadLine();
+            foreach (var element in CurrentStockOfferings)
+            {
+                if (element.StockSymbol == stockSymbol.ToUpper())
+                {
+                    Console.WriteLine("how many of the stock would you like to purchase?");
+                    var buffer = Console.ReadLine();
+                    if (!int.TryParse(buffer, out quantity))
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a integer value greater than 0");
+                        return;
+                    }
+                    if (quantity <= 0)
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a integer value greater than 0");
+                        return;
+                    }
+
+                    //aware that there would be price checking of some type here, but not sure what would be required.
+                    Console.WriteLine("what price would you like to pay for the total of this trade?");
+                    var buffer1 = Console.ReadLine();
+                    if (!decimal.TryParse(buffer1, out tradePrice))
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a decimal value greater than 0.00");
+                        return;
+                    }
+                    if (tradePrice <= 0.00m)
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a decimal value greater than 0.00");
+                        return;
+                    }
+                    Record.Add(new StockTradeRecord(stockSymbol, quantity, buyorSell, tradePrice));
+                    return;
+                }
+            }
+            Console.WriteLine("Could not match stock symbol");
+            return;
+        }
+
+        public void AddTradeSale()
+        {
+            string stockSymbol = null;
+            int quantity = 0;
+            BuyOrSell buyorSell = BuyOrSell.Sell;
+            decimal tradePrice = 0.00m;
+
+            Console.WriteLine("Which stock symbol would you like to Sell?");
+            stockSymbol = Console.ReadLine();
+            foreach (var element in CurrentStockOfferings)
+            {
+                if (element.StockSymbol == stockSymbol.ToUpper())
+                {
+                    Console.WriteLine("how many of the stock would you like to Sell?");
+                    var buffer = Console.ReadLine();
+                    if (!int.TryParse(buffer, out quantity))
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a integer value greater than 0");
+                        return;
+                    }
+                    if (quantity <= 0)
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a integer value greater than 0");
+                        return;
+                    }
+
+                    //aware that there would be price checking of some type here, but not sure what would be required.
+                    Console.WriteLine("what price would you like to charge for the total of this trade?");
+                    var buffer1 = Console.ReadLine();
+                    if (!decimal.TryParse(buffer1, out tradePrice))
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a decimal value greater than 0.00");
+                        return;
+                    }
+                    if (tradePrice <= 0.00m)
+                    {
+                        Console.WriteLine("INCORRECT INPUT, please enter a decimal value greater than 0.00");
+                        return;
+                    }
+                    Record.Add(new StockTradeRecord(stockSymbol, quantity, buyorSell, tradePrice));
+                    return;
+                }
+            }
+            Console.WriteLine("Could not match stock symbol");
+            return;
         }
 
         public decimal CalculateVolumeWeightedStockPrice (string stockSymbol)

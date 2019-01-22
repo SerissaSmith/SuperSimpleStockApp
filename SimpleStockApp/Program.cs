@@ -39,11 +39,11 @@ namespace SimpleStockApp
                 }
                 if (result == "B" || result == "b")
                 {
-                    Console.WriteLine("Not yet implimented");
+                    Record.AddTradePurchase();
                 }
                 if (result == "S" || result == "s")
                 {
-                    Console.WriteLine("Not yet implimented");
+                    Record.AddTradeSale();
                 }
                 if (result == "W" || result == "w")
                 {
