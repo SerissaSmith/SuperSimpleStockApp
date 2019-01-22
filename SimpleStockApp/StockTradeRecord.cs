@@ -19,7 +19,7 @@ namespace SimpleStockApp
             Quantity = quantity;
             BuyOrSell = buyOrSell;
             TradePrice = tradePrice;
-            TradeTime = DateTime.Now;
+            TradeTime = DateTime.UtcNow;
         }
     }
 }

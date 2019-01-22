@@ -21,7 +21,8 @@ namespace SimpleStockApp
                 Console.WriteLine("R to calculate the P/E Ratio of a specific stock option");
                 Console.WriteLine("B to buy a quantity of a specific stock option");
                 Console.WriteLine("S to sell a quantity of a specific stock option");
-                Console.WriteLine("W to calculate the volume weighted stock price for the last 15 minutes");
+                Console.WriteLine("W to calculate the volume weighted stock price for the last 15 minutes on a specific stock option");
+                Console.WriteLine("G to calculate the GBCE All Share Index on all recorded stock trade");
 
 
                 result = Console.ReadLine();
@@ -29,26 +30,37 @@ namespace SimpleStockApp
                 {
                     Record.ListAllStock();
                 }
+
                 if (result == "Y" || result == "y")
                 {
                     Record.CalculateDividendForSpecificStock();
                 }
+
                 if (result == "R" || result == "r")
                 {
                     Record.CalculatePERatioForSpecificStock();
                 }
+
                 if (result == "B" || result == "b")
                 {
                     Record.AddTradePurchase();
                 }
+
                 if (result == "S" || result == "s")
                 {
                     Record.AddTradeSale();
                 }
+
                 if (result == "W" || result == "w")
                 {
-                    Console.WriteLine("Not yet implimented");
+                    Record.CalculateVolumeWeightedStockPrice();
                 }
+
+                if (result == "G" || result == "g")
+                {
+                    Record.CalculateGeometricMean();
+                }
+
             } while (result != "x" && result != "X");
         }
     }
