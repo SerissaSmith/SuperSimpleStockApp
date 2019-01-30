@@ -8,7 +8,7 @@ namespace SimpleStockApp
         static void Main(string[] args)
         {
             string result;
-            TradeRecords Record = new TradeRecords();
+            ITradeRecords Record = new TradeRecords();
 
 
             Console.WriteLine("Welcome to the Super Simple Stock App");
@@ -26,39 +26,52 @@ namespace SimpleStockApp
 
 
                 result = Console.ReadLine();
-                if (result == "L" || result == "l")
+                switch(result)
                 {
-                    Record.ListAllStock();
-                }
+                    case "l":
+                    case "L":
+                        Record.ListAllStock();
+                        break;
 
-                if (result == "Y" || result == "y")
-                {
-                    Record.CalculateDividendForSpecificStock();
-                }
+                    case "y":
+                    case "Y":
+                        Record.CalculateDividendForSpecificStock();
+                        break;
 
-                if (result == "R" || result == "r")
-                {
-                    Record.CalculatePERatioForSpecificStock();
-                }
+                    case "r":
+                    case "R":
+                        Record.CalculatePERatioForSpecificStock();
+                        break;
 
-                if (result == "B" || result == "b")
-                {
-                    Record.AddTradePurchase();
-                }
+                    case "b":
+                    case "B":
+                        Record.AddTradePurchase();
+                        break;
 
-                if (result == "S" || result == "s")
-                {
-                    Record.AddTradeSale();
-                }
 
-                if (result == "W" || result == "w")
-                {
-                    Record.CalculateVolumeWeightedStockPrice();
-                }
+                    case "s":
+                    case "S":
+                        Record.AddTradeSale();
+                        break;
 
-                if (result == "G" || result == "g")
-                {
-                    Record.CalculateGeometricMean();
+                    case "w":
+                    case "W":
+                        Record.CalculateVolumeWeightedStockPrice();
+                        break;
+
+                    case "g":
+                    case "G":
+                        Record.CalculateGeometricMean();
+                        break;
+
+                    case "x":
+                    case "X":
+                        break;
+
+                    default:
+                        Console.WriteLine("Unrecognised Command");
+                        break;
+
                 }
 
             } while (result != "x" && result != "X");

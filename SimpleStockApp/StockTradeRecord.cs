@@ -2,7 +2,7 @@
 
 namespace SimpleStockApp
 {
-    public class StockTradeRecord
+    public class StockTradeRecord : IStockTradeRecord
     {
         public string StockSymbol { get; private set; }
         public int Quantity { get; private set; }
@@ -10,7 +10,7 @@ namespace SimpleStockApp
         public BuyOrSell BuyOrSell { get; private set; }
         public decimal TradePrice { get; private set; }
 
-        public StockTradeRecord (string stockSymbol, int quantity, BuyOrSell buyOrSell, decimal tradePrice)
+        public StockTradeRecord (string stockSymbol = null, int quantity = 0, BuyOrSell buyOrSell = BuyOrSell.Buy, decimal tradePrice = 0)
         {
             if(stockSymbol.Length == 3)
             {

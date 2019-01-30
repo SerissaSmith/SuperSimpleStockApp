@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SimpleStockApp
 {
-    public class StockItem
+    public class StockItem : IStockItem
     {
         //auto properties, keeping the Sets to private to avoid eronious updating of stock statistics
-        public string StockSymbol { get; private set; } = null;
-        public decimal LastDividend { get; private set; } = 0.00m;
-        public decimal FixedDividend { get; private set; } = 0.00m;
-        public decimal ParValue { get; private set; } = 0.00m;
-        public string StockType { get; private set; } = "Common";
+        public string StockSymbol { get; private set; }
+        public decimal LastDividend { get; private set; }
+        public decimal FixedDividend { get; private set; }
+        public decimal ParValue { get; private set; }
+        public string StockType { get; private set; }
 
         public StockItem (string stockSymbol = null, string stockType = null , decimal lastDividend = 0.00m, decimal fixedDividend = 0.00m, decimal parValue = 0.00m)
         {

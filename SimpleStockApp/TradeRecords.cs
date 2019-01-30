@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace SimpleStockApp
 {
-    public class TradeRecords
+    public class TradeRecords : ITradeRecords
     {
         private const float V = 1f;
-        private List<StockTradeRecord> Record = new List<StockTradeRecord>();
+        private List<IStockTradeRecord> Record = new List<IStockTradeRecord>();
 
         //to mock a database connection, this list has been pre-populated with the provided data
-        private List<StockItem> CurrentStockOfferings = new List<StockItem>
+        private List<IStockItem> CurrentStockOfferings = new List<IStockItem>
         {
             new StockItem("TEA", "COMMON", 0.00m, 0.00m, 100m),
             new StockItem("POP", "COMMON", 8.00m, 0.00m, 100m),

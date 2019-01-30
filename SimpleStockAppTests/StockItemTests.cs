@@ -11,7 +11,7 @@ namespace SuperSimpleStockAppTests
             var itemUnderTest = new StockItem();
 
             Assert.AreEqual (null, itemUnderTest.StockSymbol);
-            Assert.AreEqual ("Common", itemUnderTest.StockType);
+            Assert.AreEqual (null, itemUnderTest.StockType);
             Assert.AreEqual (0.00m, itemUnderTest.FixedDividend);
             Assert.AreEqual (0.00m, itemUnderTest.LastDividend);
             Assert.AreEqual (0.00m, itemUnderTest.ParValue);
