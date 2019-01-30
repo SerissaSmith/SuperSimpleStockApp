@@ -15,7 +15,7 @@ namespace SimpleStockApp
         public decimal ParValue { get; private set; }
         public string StockType { get; private set; }
 
-        public StockItem (string stockSymbol = null, string stockType = null , decimal lastDividend = 0.00m, decimal fixedDividend = 0.00m, decimal parValue = 0.00m)
+        public StockItem (string stockSymbol = null, string stockType = null, decimal lastDividend = 0.00m, decimal fixedDividend = 0.00m, decimal parValue = 0.00m)
         {
             if (stockSymbol != null)
             {
@@ -23,6 +23,10 @@ namespace SimpleStockApp
                 {
                     StockSymbol = stockSymbol.ToUpper();
                 }
+            }
+            if (stockType == null || stockType == "Common" || stockType == "COMMON" || stockType == "common")
+            {
+                StockType = "Common";//assumption, only Common or Preferred exist as states
             }
             if (stockType == "Preferred" || stockType == "preferred" || stockType == "PREFERRED")
             {
